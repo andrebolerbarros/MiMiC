@@ -54,11 +54,11 @@
 
 	for i in $input_fna/*.fa; # each sample generate two samples R1 and R2. sample names should be the same. only sufix in the file should be different. 
 		do
-			echo $i
+			echo "$i"
 
 
 #prodigal --> gene prediction
-			$ProdigalPath -i $input_fna$i -p $Type -a output_faa/$i.faa -c -m -q -f sco -d output_fna/$i.fna	
+			$ProdigalPath -i $input_fna"$i" -p $Type -a output_faa/"$i".faa -c -m -q -f sco -d output_fna/"$i".fna	
 			echo "$i	prodigal finished">>output_faa/Prodigallogfile.txt
 			ProteinCount=$(grep -c "^" output_faa/'$i'.faa) #-------------- Counting proteins
 		
