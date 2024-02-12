@@ -52,7 +52,7 @@
 
 # running script for each genome or metagenome
 
-	for i in `ls $input_fna/*.fa`; # each sample generate two samples R1 and R2. sample names should be the same. only sufix in the file should be different. 
+	for i in ls $input_fna/*.fa; # each sample generate two samples R1 and R2. sample names should be the same. only sufix in the file should be different. 
 		do
 			echo $i
 
